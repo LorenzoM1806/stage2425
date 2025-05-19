@@ -1,0 +1,37 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: |
+      cd DartsAppVentigrate
+      npm install
+    displayName: 'Install dependencies'
+  - script: |
+      cd DartsAppVentigrate
+      npm run test
+    displayName: 'Run tests'
+  - script: |
+      cd DartsAppVentigrate
+      npm run build
+    displayName: 'Build Application'
+  - script: |
+      cd DartsAppVentigrate
+      ls -la dist
+    displayName: 'List build output'
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(Build.SourcesDirectory)/DartsAppVentigrate/dist'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      replaceExistingArchive: true
+    displayName: 'Archive build artifacts'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+    displayName: 'Publish build artifacts'

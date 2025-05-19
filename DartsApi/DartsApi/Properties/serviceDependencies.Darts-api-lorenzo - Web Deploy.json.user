@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "apis1": {
+      "restored": true,
+      "restoreTime": "2025-03-14T09:24:43.1927982Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2025-03-14T12:05:40.7775568Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "40a19c6b-47cd-449c-820f-33ec8381ce35"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "stages-2425-lorenzom-rg"
+    },
+    "apis1.resourceGroupName": {
+      "Name": "apis1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "stages-2425-lorenzom-rg"
+    },
+    "apis1.subscriptionId": {
+      "Name": "apis1.subscriptionId",
+      "Type": "subscription",
+      "Value": "40a19c6b-47cd-449c-820f-33ec8381ce35"
+    }
+  }
+}

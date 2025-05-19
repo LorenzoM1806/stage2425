@@ -1,0 +1,863 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "DartsApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Checkout": {
+      "get": {
+        "tags": [
+          "Checkout"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Checkout"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Gamemode": {
+      "get": {
+        "tags": [
+          "Gamemode"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Gamemode"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Match": {
+      "get": {
+        "tags": [
+          "Match"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Match"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Match"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MatchDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Match"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Match/{id}": {
+      "put": {
+        "tags": [
+          "Match"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/MatchUpdateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Throw": {
+      "get": {
+        "tags": [
+          "Throw"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Throw"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Throw"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ThrowDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Throw"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Tournament": {
+      "get": {
+        "tags": [
+          "Tournament"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Tournament"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tournament"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Tournament"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Tournament"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Tournament/{id}": {
+      "put": {
+        "tags": [
+          "Tournament"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TournamentUpdateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TournamentMatch": {
+      "get": {
+        "tags": [
+          "TournamentMatch"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TournamentMatch"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TournamentMatch"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TournamentMatchDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TournamentMatch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TournamentParticipant": {
+      "get": {
+        "tags": [
+          "TournamentParticipant"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TournamentParticipant"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TournamentParticipant"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/TorunamentParticipantDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TournamentParticipant"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/User/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UserUpdateDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Checkout": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "score": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "checkoutPath": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Gamemode": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Match": {
+      "required": [
+        "datum",
+        "finished",
+        "gamemode",
+        "player1",
+        "player2"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "player1": {
+          "$ref": "#/definitions/User"
+        },
+        "player2": {
+          "$ref": "#/definitions/User"
+        },
+        "gamemode": {
+          "$ref": "#/definitions/Gamemode"
+        },
+        "winner": {
+          "$ref": "#/definitions/User"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MatchDto": {
+      "type": "object",
+      "properties": {
+        "player1Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "player2Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "gamemodeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MatchUpdateDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "player1Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "player2Id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "gamemodeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "winnerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "finished": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Throw": {
+      "required": [
+        "datum",
+        "match",
+        "speler",
+        "throw1",
+        "throw2",
+        "throw3"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "match": {
+          "$ref": "#/definitions/Match"
+        },
+        "throw1": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "throw2": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "throw3": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "speler": {
+          "$ref": "#/definitions/User"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ThrowDto": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "throw1": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "throw2": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "throw3": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "spelerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TorunamentParticipantDto": {
+      "type": "object",
+      "properties": {
+        "tournamentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "playerId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Tournament": {
+      "required": [
+        "datum"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "winner": {
+          "$ref": "#/definitions/User"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TournamentMatch": {
+      "required": [
+        "match",
+        "round",
+        "tournament"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tournament": {
+          "$ref": "#/definitions/Tournament"
+        },
+        "match": {
+          "$ref": "#/definitions/Match"
+        },
+        "round": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TournamentMatchDto": {
+      "type": "object",
+      "properties": {
+        "tournamentId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "matchId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "round": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TournamentParticipant": {
+      "required": [
+        "player",
+        "tournament"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tournament": {
+          "$ref": "#/definitions/Tournament"
+        },
+        "player": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TournamentUpdateDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "winnerId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "User": {
+      "required": [
+        "email",
+        "isDeleted",
+        "name",
+        "role"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "favoriteGame": {
+          "$ref": "#/definitions/Gamemode"
+        },
+        "role": {
+          "type": "string"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserUpdateDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "favoriteGameId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "role": {
+          "type": "string"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
